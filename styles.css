@@ -35,6 +35,8 @@ h2 {
   display: flex;
   justify-content: center;
   color: white;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 .search-container {
@@ -64,6 +66,7 @@ footer {
   background-color: rgba(0, 0, 0, 0.7);
   padding: 10px;
   color: white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 #songSearch::placeholder {
@@ -77,4 +80,74 @@ footer {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+div img,
+#mp4 {
+  width: 15%;
+  margin: 10px;
+}
+
+.video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Media query for screens with a maximum width of 580 pixels */
+@media only screen and (max-width: 580px) {
+  body {
+    /* Center content for smaller screens */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Add additional styles for smaller screens as needed */
+  /* For example, you might want to adjust font sizes, margins, etc. */
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  .search-container {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  #songSearch {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #mp4 {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  /* Adjust other styles as needed for smaller screens */
 }
