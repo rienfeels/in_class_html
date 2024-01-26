@@ -117,7 +117,6 @@ form {
   color: aquamarine;
 }
 
-/* Add these styles for form and button alignment */
 #userForm {
   display: flex;
   flex-direction: column;
@@ -127,24 +126,20 @@ form {
 #userForm label,
 #userName,
 #userForm button {
-  margin: 5px; /* Adjust margin for spacing */
+  margin: 5px;
 }
 
 #userForm button {
-  align-self: flex-start; /* Align the button to the start of the container */
+  align-self: flex-start;
 }
 
-/* Media query for screens with a maximum width of 580 pixels */
 @media only screen and (max-width: 580px) {
   body {
-    /* Center content for smaller screens */
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  /* Add additional styles for smaller screens as needed */
-  /* For example, you might want to adjust font sizes, margins, etc. */
   h1,
   h2 {
     text-align: center;
@@ -179,8 +174,6 @@ form {
 
   #mp4 {
     width: 100%;
-    height: auto; /* Maintain aspect ratio */
+    height: auto;
   }
-
-  /* Adjust other styles as needed for smaller screens */
 }
