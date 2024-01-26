@@ -20,7 +20,7 @@
           <li><button>Playlists</button></li>
         </ul>
       </nav>
-      <button>Sign In</button>
+      <button onclick="showForm()">Open Form</button>
     </header>
     <main>
       <h1>Music History Through Sampling</h1>
@@ -33,9 +33,56 @@
       <div class="video">
         <iframe id="mp4" width="100%" height="315" src="all_caps.mp4"></iframe>
       </div>
+
+      <!-- Add the HTML form and display elements -->
+      <form id="userForm" style="display: none">
+        <label for="userName">Enter your name:</label>
+        <input type="text" id="userName" autocomplete="name" />
+        <button type="button" onclick="processForm()">Submit</button>
+      </form>
+
+      <div id="userOutput" style="display: none">
+        <h3>User Input:</h3>
+        <p id="userNameOutput"></p>
+      </div>
+
+      <a href="popular-samples_index.html">Popular samples</a>
     </main>
     <footer>
       <h3>This webpage is brought to you by: Ryan Fields</h3>
     </footer>
+
+    <!-- Inline JavaScript -->
+    <script>
+      console.log("Page Loaded");
+
+      const userForm = document.querySelector("#userForm");
+      const userNameInput = document.querySelector("#userName");
+      const userOutput = document.querySelector("#userOutput");
+
+      userForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const userName = userNameInput.value;
+        userOutput.innerHTML = `<h3>User Input:</h3><p>${userName}</p>`;
+        userOutput.style.display = "block";
+      });
+
+      function showForm() {
+        userForm.style.display = "flex";
+        userOutput.style.display = "none";
+      }
+
+      function processForm() {
+        const userName = userNameInput.value;
+        userOutput.innerHTML = `<h3>User Input:</h3><p>${userName}</p>`;
+        userOutput.style.display = "block";
+      }
+
+      // Your existing searchSong() function (if needed)
+      function searchSong() {
+        // Add your search functionality here
+      }
+    </script>
   </body>
 </html>

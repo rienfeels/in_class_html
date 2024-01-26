@@ -101,6 +101,39 @@ div img,
   align-items: center;
 }
 
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  color: aquamarine;
+}
+
+#userOutput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  color: aquamarine;
+}
+
+/* Add these styles for form and button alignment */
+#userForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#userForm label,
+#userName,
+#userForm button {
+  margin: 5px; /* Adjust margin for spacing */
+}
+
+#userForm button {
+  align-self: flex-start; /* Align the button to the start of the container */
+}
+
 /* Media query for screens with a maximum width of 580 pixels */
 @media only screen and (max-width: 580px) {
   body {
