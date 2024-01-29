@@ -12,14 +12,26 @@
       </div>
       <nav>
         <ul>
-          <li><button>Popular Samples</button></li>
-          <li><button>Genres</button></li>
+          <a href="popular-samples_index.html"
+            ><button>Popular Samples</button></a
+          >
+          <a href="genres_index.html"><button>Genres</button></a>
           <li><button>Playlists</button></li>
         </ul>
       </nav>
-      <button onclick="showForm()">Open Form</button>
+      <button onclick="showForm()">Create Account</button>
     </header>
     <main>
+      <form id="userForm" style="display: none">
+        <label for="userName">Enter your name:</label>
+        <input type="text" id="userName" autocomplete="name" />
+        <button type="button" onclick="processForm()">Submit</button>
+      </form>
+
+      <div id="userOutput" style="display: none">
+        <h3>User Input:</h3>
+        <p id="userNameOutput"></p>
+      </div>
       <h1>Popular Samples</h1>
       <h2>Herb Alpert, “Rise” / The Notorious B.I.G., “Hypnotize”</h2>
       <iframe
@@ -62,13 +74,32 @@
     <footer></footer>
 
     <script>
-      function showForm() {
-        const userForm = document.querySelector("#userForm");
-        const userOutput = document.querySelector("#userOutput");
+      console.log("Page Loaded");
 
+      const userForm = document.querySelector("#userForm");
+      const userNameInput = document.querySelector("#userName");
+      const userOutput = document.querySelector("#userOutput");
+
+      userForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const userName = userNameInput.value;
+        userOutput.innerHTML = `<h3>User Input:</h3><p>${userName}</p>`;
+        userOutput.style.display = "block";
+      });
+
+      function showForm() {
         userForm.style.display = "flex";
         userOutput.style.display = "none";
       }
+
+      function processForm() {
+        const userName = userNameInput.value;
+        userOutput.innerHTML = `<h3>User Input:</h3><p>${userName}</p>`;
+        userOutput.style.display = "block";
+      }
+
+      function searchSong() {}
     </script>
   </body>
 </html>
