@@ -25,7 +25,7 @@
             ><button>Popular Samples</button></a
           >
           <a href="genres_index.html"><button>Genres</button></a>
-          <li><button>Playlists</button></li>
+          <a href="playlists_index.html"><button>Playlists</button></a>
         </ul>
       </nav>
       <button type="button" onclick="showForm()">Create Account</button>
@@ -41,12 +41,17 @@
       <form id="userForm" class="popup-form">
         <label for="userName">Enter your name:</label>
         <input type="text" id="userName" autocomplete="name" />
+        <label for="favoriteArtists"
+          >Enter your favorite artists (comma-searated):</label
+        >
+        <textarea id="favoriteArtists" rows="4"></textarea>
         <button type="button" onclick="processForm()">Submit</button>
       </form>
 
       <div id="userOutput" style="display: none">
         <h3>User Input:</h3>
         <p id="userNameOutput"></p>
+        <p id="favoriteArtistsOutput"></p>
       </div>
     </main>
     <script>
@@ -54,13 +59,22 @@
 
       const userForm = document.querySelector("#userForm");
       const userNameInput = document.querySelector("#userName");
+      const favoriteArtistsInput = document.querySelector("#favoriteArtists");
       const userOutput = document.querySelector("#userOutput");
+      const userNameOutput = document.querySelector("#userNameOutput");
+      const favoriteArtistsOutput = document.querySelector(
+        "#favoriteArtistsOutput"
+      );
 
       userForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
         const userName = userNameInput.value;
-        userOutput.innerHTML = `<h3>User Input:</h3><p>${userName}</p>`;
+        const favoriteArtists = favoriteArtistsInput.value;
+
+        userNameOutput.textContent = `Name: ${userName}`;
+        favoriteArtistsOutput.textContent = `Favorite Artists: ${favoriteArtists}`;
+
         userOutput.style.display = "block";
         userForm.style.display = "none";
       });
@@ -73,7 +87,11 @@
 
       function processForm() {
         const userName = userNameInput.value;
-        userOutput.innerHTML = `<h3>User Input:</h3><p>${userName}</p>`;
+        const favoriteArtists = favoriteArtistsInput.value;
+
+        userNameOutput.textContent = `Name: ${userName}`;
+        favoriteArtistsOutput.textContent = `Favorite Artists: ${favoriteArtists}`;
+
         userOutput.style.display = "block";
         userForm.style.display = "none";
       }
