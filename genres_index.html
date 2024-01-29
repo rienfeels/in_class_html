@@ -8,7 +8,13 @@
   </head>
   <body>
     <header>
-      <img class="transparent-image" src="logo_4.jpg" alt="The sampler logo" />
+      <a href="music_app_index.html">
+        <img
+          class="transparent-image"
+          src="logo_4.jpg"
+          alt="The sampler logo"
+        />
+      </a>
       <div class="search container">
         <input type="text" id="songSearch" placeholder="Search for a song..." />
         <button id="searchButton" onclick="searchSong()">Search</button>
@@ -22,7 +28,7 @@
           <li><button>Playlists</button></li>
         </ul>
       </nav>
-      <button onclick="showForm()">Create Account</button>
+      <button type="button" onclick="showForm()">Create Account</button>
     </header>
     <main>
       <h1>Choose your preferred genre.</h1>
@@ -32,7 +38,7 @@
         <li><button>Pop</button></li>
         <li><button>Electronic</button></li>
       </ul>
-      <form id="userForm" style="display: none">
+      <form id="userForm" class="popup-form">
         <label for="userName">Enter your name:</label>
         <input type="text" id="userName" autocomplete="name" />
         <button type="button" onclick="processForm()">Submit</button>
@@ -56,17 +62,20 @@
         const userName = userNameInput.value;
         userOutput.innerHTML = `<h3>User Input:</h3><p>${userName}</p>`;
         userOutput.style.display = "block";
+        userForm.style.display = "none";
       });
 
       function showForm() {
         userForm.style.display = "flex";
         userOutput.style.display = "none";
+        userForm.style.position = "fixed";
       }
 
       function processForm() {
         const userName = userNameInput.value;
         userOutput.innerHTML = `<h3>User Input:</h3><p>${userName}</p>`;
         userOutput.style.display = "block";
+        userForm.style.display = "none";
       }
 
       function searchSong() {}
